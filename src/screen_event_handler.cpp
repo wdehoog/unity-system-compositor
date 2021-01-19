@@ -57,7 +57,9 @@ bool usc::ScreenEventHandler::handle(MirEvent const& event)
                 power_button_event_sink->notify_release();
         }
         // we might want to come up with a whole range of media player related keys
-        else if (key_code == KEY_VOLUMEDOWN
+        else if (
+                 // can come from headset button
+                    key_code == KEY_VOLUMEDOWN
                  || key_code == KEY_VOLUMEUP
                  || key_code == KEY_MEDIA
                  // can come from gestures of touchpanel
